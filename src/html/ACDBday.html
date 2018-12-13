@@ -1,0 +1,179 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Aircraft Database</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-12-13"><meta name="DC.source" content="ACDBday.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Aircraft Database</h1><p>This generates the database of information for all scheduled aircrafts on a given day. The number of customers in a day is random from a range, clustered around the max of that range close to Thanksgiving and Christmas. The objective is to minimize the amount of time each passenger spends waiting and maximize the amount of passengers in an AC. Suppose a flight is scheduled every 15 minutes.</p><pre class="codeinput"><span class="keyword">function</span> AC = ACDBday(month, day, year)
+    actype = 100:50:400;
+    <span class="comment">% number of discrete time intervals, each is 15 minutes</span>
+    N = 96;
+    f = @(x) abs(3*sin(3*x)./x) + pi/2;
+    <span class="comment">% determine the date of thanksgivng that year</span>
+    incr =  abs(year-2019);
+    <span class="keyword">for</span> i = 1:incr
+        <span class="keyword">if</span> mod(year, 4) == 0
+            incr = incr + 2;
+        <span class="keyword">else</span>
+            incr = incr + 1;
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="comment">% week of Thanksgiving</span>
+    <span class="keyword">if</span> month == 11
+        hday = 7 - mod(7, incr) + 21;
+    <span class="comment">% week of Christmas</span>
+    <span class="keyword">elseif</span> month == 12 &amp;&amp; abs(25-day) &lt; 6
+        hday = 25;
+    <span class="keyword">else</span>
+        hday = 0;
+    <span class="keyword">end</span>
+
+    <span class="keyword">for</span> i = 1:N
+        cap = randi([1 7]);
+        n = randi([actype(cap)-50 actype(cap)+50]);
+        <span class="keyword">for</span> j = 1:5
+            <span class="keyword">switch</span> j
+                <span class="keyword">case</span> 1
+                    AC(i, j) = actype(cap);
+                <span class="keyword">case</span> 2 <span class="comment">% number of passengers</span>
+                    <span class="keyword">if</span> hday
+                        AC(i, j) = round(f(abs(day-hday)+1)*n/(exp(1)/2));
+                    <span class="keyword">else</span>
+                        AC(i, j) = n;
+                    <span class="keyword">end</span>
+                <span class="keyword">case</span> 3 <span class="comment">% number of passengers leaving at the next stop</span>
+                    AC(i,j) = randi([0 AC(i, j-1)]);
+                <span class="keyword">case</span> 4 <span class="comment">% number of passengers boarding at the next stop</span>
+                    AC(i, j) = randi([0 AC(i, j-2) - AC(i, j-1)]);
+                <span class="keyword">otherwise</span> <span class="comment">% timesetp, t</span>
+                    AC(i, j) = i;
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><pre class="codeoutput error">Not enough input arguments.
+
+Error in ACDBday (line 15)
+    incr =  abs(year-2019);
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Aircraft Database
+% This generates the database of information for all scheduled aircrafts
+% on a given day. The number of customers in a day is random from a
+% range, clustered around the max of that range close to Thanksgiving
+% and Christmas. The objective is to minimize the amount of time each
+% passenger spends waiting and maximize the amount of passengers in an
+% AC. Suppose a flight is scheduled every 15 minutes.
+
+function AC = ACDBday(month, day, year)
+    actype = 100:50:400;
+    % number of discrete time intervals, each is 15 minutes
+    N = 96;
+    f = @(x) abs(3*sin(3*x)./x) + pi/2;
+    % determine the date of thanksgivng that year
+    incr =  abs(year-2019);
+    for i = 1:incr
+        if mod(year, 4) == 0
+            incr = incr + 2;
+        else
+            incr = incr + 1;
+        end
+    end
+    % week of Thanksgiving
+    if month == 11
+        hday = 7 - mod(7, incr) + 21;
+    % week of Christmas
+    elseif month == 12 && abs(25-day) < 6
+        hday = 25;
+    else
+        hday = 0;
+    end
+ 
+    for i = 1:N
+        cap = randi([1 7]);
+        n = randi([actype(cap)-50 actype(cap)+50]);
+        for j = 1:5
+            switch j
+                case 1
+                    AC(i, j) = actype(cap);
+                case 2 % number of passengers
+                    if hday
+                        AC(i, j) = round(f(abs(day-hday)+1)*n/(exp(1)/2));
+                    else
+                        AC(i, j) = n;
+                    end
+                case 3 % number of passengers leaving at the next stop
+                    AC(i,j) = randi([0 AC(i, j-1)]);
+                case 4 % number of passengers boarding at the next stop
+                    AC(i, j) = randi([0 AC(i, j-2) - AC(i, j-1)]);
+                otherwise % timesetp, t
+                    AC(i, j) = i;
+            end
+        end
+    end	
+end
+
+##### SOURCE END #####
+--></body></html>

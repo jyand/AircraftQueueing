@@ -14,6 +14,23 @@
 % The objective of this mathematical model, qualitatively, is to "account
 % for the satisfaction of both the passengers and the airline".
 
-actype = 100:50:400
+AC = ACDBday(4, 20, 2019)
 
-for i = 
+nErr = AC(:, 1) - AC(:, 2);
+ncum = 0;
+manhours = 0;
+tdelay = 0;
+
+% first we run the simulation for a day to show what happens when people 
+% are kept waiting
+% if over capacity, the extra people will wait for a subsequent plane
+% if under capacity, the plane waits in queue and the seats are filled at
+% the next time interval
+for i = 1:length(AC)-1
+    if heaviside(nErr)
+        
+    fprintf('%4d | %4d | %4d \n', tsched(i), tactual(i), tactual(i)/tsched(i));
+end
+
+%then we run it again to show what happens when every flight runs on
+%schedule
