@@ -14,6 +14,6 @@
 % The objective of this mathematical model, qualitatively, is to "account
 % for the satisfaction of both the passengers and the airline".
 
-% non-formatted time of day, i.e. 0 is 12am 1439 is 11:50pm
-clk = 0:1:1439;
-    
+actype = 100:50:400
+
+for i = 
