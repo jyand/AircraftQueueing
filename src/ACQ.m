@@ -14,23 +14,54 @@
 % The objective of this mathematical model, qualitatively, is to "account
 % for the satisfaction of both the passengers and the airline".
 
-AC = ACDBday(4, 20, 2019)
+% AC = ACDBday(4, 21, 2019)
 
 nErr = AC(:, 1) - AC(:, 2);
-ncum = 0;
-manhours = 0;
-tdelay = 0;
 
-% first we run the simulation for a day to show what happens when people 
-% are kept waiting
-% if over capacity, the extra people will wait for a subsequent plane
-% if under capacity, the plane waits in queue and the seats are filled at
+% Case where no flight leaves until it is at full capacity:
+% ~ if over capacity, the extra people will wait for a subsequent plane
+% ~ if under capacity, the plane waits in queue and the seats are filled at
 % the next time interval
-for i = 1:length(AC)-1
-    if heaviside(nErr)
-        
-    fprintf('%4d | %4d | %4d \n', tsched(i), tactual(i), tactual(i)/tsched(i));
+q = 0;
+ncum = max([0 nErr(1)]);
+tErr(1) = 15*heaviside(nErr(1));
+err = heaviside(nErr(1))*nErr(1);
+for i = 2:length(AC)
+    if heaviside(nErr(i))
+        if nErr(i) < abs(nErr(i-1))
+            nErr(i) = nErr(i) - nErr(i-1);
+            err = err + AC(i, 2) + nErr(i);
+            q = q + 1;
+        else
+            nErr(i) = nErr(i) + nErr(i-1);
+            ncum = ncum + nErr(i);
+            err = err + nErr(i);
+            q = q - 1;
+        end
+    else
+        if ncum > abs(nErr(i))
+            ncum = ncum - (ncum - abs(nErr(i)));
+            err = err + ncum;
+        else
+            q = q + 1;
+            err = err + AC(i, 2);
+        end
+    end
+    tsched(i) = i*15;
+    tactual(i) = tsched(i) + q*15;
+    tErr(i) = tactual(i) - tsched(i); 
+    fprintf('%4d | %4d | %4d  | %6d \n', tsched(i), tactual(i), tErr(i), 15*err);
 end
 
-%then we run it again to show what happens when every flight runs on
-%schedule
+% Case where every flight leaves as scheduled:
+%ncum = 0;
+%capErr = 0;
+%err = 0;
+%for i = 1:length(AC)
+ %   if heaviside(nErr(i))
+  %      ncum = ncum + nErr(i);
+   % else
+    %    capErr = capErr + nErr(i);
+     %   ncum = ncum - 
+    %end
+    %err = err + ncum;
