@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.12.9)  13 DEC 2018 03:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.12.9)  21 DEC 2018 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -122,23 +122,24 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-(./AirplaneQueueing.aux)
+(/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (./AirplaneQueueing.aux)
 \openout1 = `AirplaneQueueing.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
 \scratchdimen=\dimen114
@@ -207,12 +208,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -223,46 +224,224 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (66.95023pt too wide) in paragraph at lines 108--108
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 35--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--50
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
+
+ []
+
+[4]
+Package epstopdf Info: Source file: <sinc.eps>
+(epstopdf)                    date: 2018-12-21 18:09:18
+(epstopdf)                    size: 20696 bytes
+(epstopdf)             Output file: <sinc-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-12-21 18:10:01
+(epstopdf)                    size: 5810 bytes
+(epstopdf)             Command: <repstopdf --outfile=sinc-eps-converted-to.pdf 
+sinc.eps>
+(epstopdf)             \includegraphics on input line 56.
+Package epstopdf Info: Output file is already uptodate.
+<sinc-eps-converted-to.pdf, id=21, 424.58624pt x 315.1775pt>
+File: sinc-eps-converted-to.pdf Graphic file (type pdf)
+<use sinc-eps-converted-to.pdf>
+Package pdftex.def Info: sinc-eps-converted-to.pdf  used on input line 56.
+(pdftex.def)             Requested size: 424.5852pt x 315.17673pt.
+
+Overfull \hbox (52.21002pt too wide) in paragraph at lines 56--57
+[][] 
+ []
+
+Package epstopdf Info: Source file: <yeardist.eps>
+(epstopdf)                    date: 2018-12-21 19:55:57
+(epstopdf)                    size: 119788 bytes
+(epstopdf)             Output file: <yeardist-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-12-21 19:56:51
+(epstopdf)                    size: 38015 bytes
+(epstopdf)             Command: <repstopdf --outfile=yeardist-eps-converted-to.
+pdf yeardist.eps>
+(epstopdf)             \includegraphics on input line 59.
+Package epstopdf Info: Output file is already uptodate.
+<yeardist-eps-converted-to.pdf, id=22, 424.58624pt x 315.1775pt>
+File: yeardist-eps-converted-to.pdf Graphic file (type pdf)
+<use yeardist-eps-converted-to.pdf>
+Package pdftex.def Info: yeardist-eps-converted-to.pdf  used on input line 59.
+(pdftex.def)             Requested size: 424.5852pt x 315.17673pt.
+
+Overfull \hbox (34.5852pt too wide) in paragraph at lines 58--60
+[] 
+ []
+
+[5 <./sinc-eps-converted-to.pdf>] [6 <./yeardist-eps-converted-to.pdf>]
+[7]
+Overfull \hbox (73.12523pt too wide) in paragraph at lines 150--150
+[]    \OT1/cmtt/m/n/12 % function determining the density of increase in passen
+gers aroung the[] 
+ []
+
+[8]
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 150--150
 []                        \OT1/cmtt/m/n/12 AC(i, j) = round(f(abs(day-hday)+1)*
 n/(exp(1)/2));[] 
  []
 
-
-Overfull \hbox (42.25021pt too wide) in paragraph at lines 108--108
-[]                \OT1/cmtt/m/n/12 case 3 % number of passengers leaving at the
- next stop[] 
+[9]
+Overfull \hbox (5.2002pt too wide) in paragraph at lines 150--150
+[]                \OT1/cmtt/m/n/12 % number of passengers boarding at the next 
+stop[] 
  []
 
 
-Overfull \hbox (48.42522pt too wide) in paragraph at lines 108--108
-[]                \OT1/cmtt/m/n/12 case 4 % number of passengers boarding at th
-e next stop[] 
- []
-
-
-Overfull \hbox (17.5502pt too wide) in paragraph at lines 108--108
+Overfull \hbox (17.5502pt too wide) in paragraph at lines 150--150
 []                    \OT1/cmtt/m/n/12 AC(i, j) = randi([0 AC(i, j-2) - AC(i, j
 -1)]);[] 
  []
 
-[4] (./AirplaneQueueing.aux) ) 
+Package epstopdf Info: Source file: <poly2.eps>
+(epstopdf)                    date: 2018-12-21 19:04:40
+(epstopdf)                    size: 57052 bytes
+(epstopdf)             Output file: <poly2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-12-21 19:13:53
+(epstopdf)                    size: 24496 bytes
+(epstopdf)             Command: <repstopdf --outfile=poly2-eps-converted-to.pdf
+ poly2.eps>
+(epstopdf)             \includegraphics on input line 156.
+Package epstopdf Info: Output file is already uptodate.
+<poly2-eps-converted-to.pdf, id=51, 421.575pt x 316.18124pt>
+File: poly2-eps-converted-to.pdf Graphic file (type pdf)
+<use poly2-eps-converted-to.pdf>
+Package pdftex.def Info: poly2-eps-converted-to.pdf  used on input line 156.
+(pdftex.def)             Requested size: 421.57396pt x 316.18047pt.
+Package epstopdf Info: Source file: <linsep.eps>
+(epstopdf)                    date: 2018-12-21 19:13:43
+(epstopdf)                    size: 50261 bytes
+(epstopdf)             Output file: <linsep-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-12-21 19:13:53
+(epstopdf)                    size: 16763 bytes
+(epstopdf)             Command: <repstopdf --outfile=linsep-eps-converted-to.pd
+f linsep.eps>
+(epstopdf)             \includegraphics on input line 159.
+Package epstopdf Info: Output file is already uptodate.
+<linsep-eps-converted-to.pdf, id=52, 421.575pt x 316.18124pt>
+File: linsep-eps-converted-to.pdf Graphic file (type pdf)
+<use linsep-eps-converted-to.pdf>
+Package pdftex.def Info: linsep-eps-converted-to.pdf  used on input line 159.
+(pdftex.def)             Requested size: 421.57396pt x 316.18047pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--164
+
+ []
+
+
+Overfull \hbox (31.57396pt too wide) in paragraph at lines 153--164
+[] 
+ []
+
+
+Overfull \hbox (31.57396pt too wide) in paragraph at lines 153--164
+[] 
+ []
+
+[10] [11 <./poly2-eps-converted-to.pdf>] [12 <./linsep-eps-converted-to.pdf>]
+[13]
+Package epstopdf Info: Source file: <linPF_01.eps>
+(epstopdf)                    date: 2018-12-21 20:15:16
+(epstopdf)                    size: 18172 bytes
+(epstopdf)             Output file: <linPF_01-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-12-21 20:15:29
+(epstopdf)                    size: 5991 bytes
+(epstopdf)             Command: <repstopdf --outfile=linPF_01-eps-converted-to.
+pdf linPF_01.eps>
+(epstopdf)             \includegraphics on input line 205.
+Package epstopdf Info: Output file is already uptodate.
+<linPF_01-eps-converted-to.pdf, id=76, 421.575pt x 316.18124pt>
+File: linPF_01-eps-converted-to.pdf Graphic file (type pdf)
+<use linPF_01-eps-converted-to.pdf>
+Package pdftex.def Info: linPF_01-eps-converted-to.pdf  used on input line 205.
+
+(pdftex.def)             Requested size: 421.57396pt x 316.18047pt.
+
+Overfull \hbox (31.57396pt too wide) in paragraph at lines 205--206
+[][] 
+ []
+
+[14]
+Package epstopdf Info: Source file: <linPF_02.eps>
+(epstopdf)                    date: 2018-12-21 20:23:01
+(epstopdf)                    size: 157960 bytes
+(epstopdf)             Output file: <linPF_02-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-12-21 20:26:02
+(epstopdf)                    size: 56991 bytes
+(epstopdf)             Command: <repstopdf --outfile=linPF_02-eps-converted-to.
+pdf linPF_02.eps>
+(epstopdf)             \includegraphics on input line 209.
+Package epstopdf Info: Output file is already uptodate.
+<linPF_02-eps-converted-to.pdf, id=80, 421.575pt x 316.18124pt>
+File: linPF_02-eps-converted-to.pdf Graphic file (type pdf)
+<use linPF_02-eps-converted-to.pdf>
+Package pdftex.def Info: linPF_02-eps-converted-to.pdf  used on input line 209.
+
+(pdftex.def)             Requested size: 421.57396pt x 316.18047pt.
+
+Overfull \hbox (31.57396pt too wide) in paragraph at lines 209--210
+[][] 
+ []
+
+[15 <./linPF_01-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pf.eps>
+(epstopdf)                    date: 2018-12-21 20:36:07
+(epstopdf)                    size: 62779 bytes
+(epstopdf)             Output file: <pf-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-12-21 20:36:38
+(epstopdf)                    size: 16007 bytes
+(epstopdf)             Command: <repstopdf --outfile=pf-eps-converted-to.pdf pf
+.eps>
+(epstopdf)             \includegraphics on input line 213.
+Package epstopdf Info: Output file is already uptodate.
+<pf-eps-converted-to.pdf, id=89, 424.58624pt x 315.1775pt>
+File: pf-eps-converted-to.pdf Graphic file (type pdf)
+<use pf-eps-converted-to.pdf>
+Package pdftex.def Info: pf-eps-converted-to.pdf  used on input line 213.
+(pdftex.def)             Requested size: 424.5852pt x 315.17673pt.
+
+Overfull \hbox (34.5852pt too wide) in paragraph at lines 213--214
+[][] 
+ []
+
+[16 <./linPF_02-eps-converted-to.pdf>] [17 <./pf-eps-converted-to.pdf>]
+(./AirplaneQueueing.aux) ) 
 Here is how much of TeX's memory you used:
- 2390 strings out of 492639
- 31049 string characters out of 6135497
- 98564 words of memory out of 5000000
- 6246 multiletter control sequences out of 15000+600000
+ 2460 strings out of 492639
+ 32749 string characters out of 6135497
+ 100856 words of memory out of 5000000
+ 6304 multiletter control sequences out of 15000+600000
  12572 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,27p,416b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
-></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on AirplaneQueueing.pdf (4 pages, 44653 bytes).
+ 41i,6n,27p,1095b,249s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on AirplaneQueueing.pdf (17 pages, 246255 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
