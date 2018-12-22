@@ -7,7 +7,6 @@ Q = [];
 ncum = 0;
 tcum = 0;
 for i = 1:length(AC)
-    tErr(i) = 15.*i;
     if heaviside(nErr(i))
         ncum = ncum + nErr(i);
         tcum = ncum;
@@ -25,14 +24,20 @@ for i = 1:length(AC)
             end
         end 
     end
-    tErr(i) = tErr(i) + 15.*q;
-    pErr(i) = 15*tcum;
+    pErr(i) = tcum;
 end
 
-tsaErr = 480.*nErr;
+tsaErr = abs(nErr);
+figure(1)
 scatter(t, pErr)
 hold on
 scatter(t, tsaErr)
+hold on
+plot(t, 0.4*t + 35, 'g')
+legend('passanger cost', 'airline cost', 'linear separator')
 
-x1 = tsaErr;
-x2 = tErr;
+figure(2)
+scatter(t, pErr)
+hold on
+f = fit(t, pErr', 'poly2')
+plot(f, t, pErr')

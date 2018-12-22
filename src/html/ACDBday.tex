@@ -1,11 +1,26 @@
-%% Aircraft Database
-% This generates the database of information for all scheduled aircrafts
-% on a given day. The number of customers in a day is random from a
-% range, clustered around the max of that range close to Thanksgiving
-% and Christmas. The objective is to minimize the amount of time each
-% passenger spends waiting and maximize the amount of passengers in an
-% AC. Suppose a flight is scheduled every 15 minutes.
 
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    
+
+\section*{Aircraft Database}
+
+\begin{par}
+This generates the database of information for all scheduled aircrafts on a given day. The number of customers in a day is random from a range, clustered around the max of that range close to Thanksgiving and Christmas. The objective is to minimize the amount of time each passenger spends waiting and maximize the amount of passengers in an AC. Suppose a flight is scheduled every 15 minutes.
+\end{par} \vspace{1em}
+\begin{verbatim}
 function AC = ACDBday(month, day, year)
     actype = 100:50:400;
     % number of discrete time intervals, each is 15 minutes
@@ -31,7 +46,7 @@ function AC = ACDBday(month, day, year)
     else
         hday = 0;
     end
- 
+
     for i = 1:N
         cap = randi([1 7]);
         n = randi([actype(cap)-50 actype(cap)+50]);
@@ -41,22 +56,36 @@ function AC = ACDBday(month, day, year)
                 case 1
                     AC(i, j) = actype(cap);
                 % number of passengers
-                case 2 
+                case 2
                     if hday
                         AC(i, j) = round(f(abs(day-hday)+1)*n/(exp(1)/2));
                     else
                         AC(i, j) = n;
                     end
-                % number of passengers leaving at the next stop    
+                % number of passengers leaving at the next stop
                 case 3
                     AC(i,j) = randi([0 AC(i, j-1)]);
                 % number of passengers boarding at the next stop
-                case 4 
+                case 4
                     AC(i, j) = randi([0 AC(i, j-2) - AC(i, j-1)]);
                 % timesetp, t
-                otherwise 
+                otherwise
                     AC(i, j) = i;
             end
         end
     end
+    x = -7:7;
+    stem(x, f(x))
 end
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}Not enough input arguments.
+
+Error in ACDBday (line 17)
+    incr =  abs(year-2019);
+\end{verbatim} \color{black}
+    
+
+
+\end{document}
+    
